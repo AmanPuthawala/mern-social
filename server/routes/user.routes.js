@@ -8,6 +8,15 @@ router.route('/api/users')
   .get(userCtrl.list)
   .post(userCtrl.create)
 
+  router.route('/api/users/getUser')
+  .get(userCtrl.getUser)
+
+  router.route('/api/users/adminLogin')
+  .get(userCtrl.adminLogin)
+
+  router.route('/api/users/deleteUser/:id')
+  .delete(userCtrl.deleteUser)
+
 router.route('/api/users/photo/:userId')
   .get(userCtrl.photo, userCtrl.defaultPhoto)
 router.route('/api/users/defaultphoto')

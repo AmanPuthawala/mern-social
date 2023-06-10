@@ -178,6 +178,46 @@ const findPeople = async (req, res) => {
   }
 }
 
+const getUser = async (req, res) => {
+  try {
+    let users = await User.find()
+    res.json(users)
+  }catch(err){
+    return res.status(401).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
+
+const adminLogin = async (req, res) => {
+  try {
+    if(req.body.email=="admin@gmail.com" && req.body.password=="Admin@123")
+    {
+      res.status(200).json("admin success");
+    }
+    else{
+      res.status(401).json("admin not success");
+    }
+    
+  }catch(err){
+    return res.status(401).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
+
+const deleteUser = async (req, res) => {
+  const {id} = req.params
+  try {
+    let users = await User.deleteOne({_id:id})
+    res.json(users)
+  }catch(err){
+    return res.status(401).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
+
 export default {
   create,
   userByID,
@@ -191,5 +231,8 @@ export default {
   addFollower,
   removeFollowing,
   removeFollower,
-  findPeople
+  findPeople,
+  adminLogin,
+  getUser,
+  deleteUser
 }

@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
-import unicornbikeImg from './../assets/images/unicornbike.jpg'
+import unicornbikeImg from './../assets/images/socialmedia.jpg'
 import Grid from '@material-ui/core/Grid'
 import auth from './../auth/auth-helper'
 import FindPeople from './../user/FindPeople'
@@ -16,9 +16,10 @@ const useStyles = makeStyles(theme => ({
     margin: 30,
   },
   card: {
-    maxWidth: 600,
+    maxWidth: 1050,
     margin: 'auto',
     marginTop: theme.spacing(5),
+    padding: theme.spacing(3),
     marginBottom: theme.spacing(5)
   },
   title: {
@@ -26,10 +27,10 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary
   },
   media: {
-    minHeight: 400
+    minHeight: 650
   },
   credit: {
-    padding: 10,
+    padding: 40,
     textAlign: 'right',
     backgroundColor: '#ededed',
     borderBottom: '1px solid #d0d0d0',
@@ -60,13 +61,12 @@ export default function Home({history}){
             <Grid item xs={12}>
               <Card className={classes.card}>
                 <Typography variant="h6" className={classes.title}>
-                  Home Page
+                    Welcome !!
                 </Typography>
-                <CardMedia className={classes.media} image={unicornbikeImg} title="Unicorn Bicycle"/>
-                <Typography variant="body2" component="p" className={classes.credit} color="textSecondary">Photo by <a href="https://unsplash.com/@boudewijn_huysmans" target="_blank" rel="noopener noreferrer">Boudewijn Huysmans</a> on Unsplash</Typography>
+                <CardMedia className={classes.media} image={unicornbikeImg} title="UniScorn Bicycle"/>
                 <CardContent>
                   <Typography type="body1" component="p">
-                    Welcome to the MERN Social home page. 
+                    Welcome to the Socail Media welcome page. 
                   </Typography>
                 </CardContent>
               </Card>

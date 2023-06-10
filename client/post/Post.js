@@ -17,6 +17,7 @@ import {makeStyles} from '@material-ui/core/styles'
 import {Link} from 'react-router-dom'
 import {remove, like, unlike} from './api-post.js'
 import Comments from './Comments'
+import { ImportContacts } from '@material-ui/icons'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -131,7 +132,7 @@ export default function Post (props){
         <CardActions>
           { values.like
             ? <IconButton onClick={clickLike} className={classes.button} aria-label="Like" color="secondary">
-                <FavoriteIcon />
+                <FavoriteIcon /> 
               </IconButton>
             : <IconButton onClick={clickLike} className={classes.button} aria-label="Unlike" color="secondary">
                 <FavoriteBorderIcon />
